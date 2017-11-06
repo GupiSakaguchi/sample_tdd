@@ -39,4 +39,19 @@ RSpec.describe Franc do
       expect(Franc.new(15).amount).to eq dollar.amount_times(3).amount
     end
   end
+
+  describe "Equality" do
+    it "object match true" do
+      dollar1 = Franc.new(1)
+      dollar2 = Franc.new(1)
+      expect(dollar1.equals(dollar2)).to be true
+    end
+
+    it "object match false" do
+      dollar1 = Franc.new(1)
+      dollar2 = Franc.new(2)
+      expect(dollar1.equals(dollar2)).to be false
+    end
+  end
+
 end
