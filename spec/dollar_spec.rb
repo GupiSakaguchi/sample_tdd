@@ -4,27 +4,25 @@ RSpec.describe Dollar do
   describe "Multipulication" do
     let(:dollar) { Dollar.new(5) }
     it "2 times" do
-      product = dollar.amount_times(2)
-      expect(product.amount).to eq 10
+      expect(Dollar.new(10).amount).to eq dollar.amount_times(2).amount
     end
 
     it "3 times" do
-      product = dollar.amount_times(3)
-      expect(product.amount).to eq 15
+      expect(Dollar.new(15).amount).to eq dollar.amount_times(3).amount
     end
   end
 
   describe "Equality" do
     it "object match true" do
       dollar1 = Dollar.new(1)
-      dollar2 = dollar1
-      expect(dollar1.equal?(dollar2)).to be true
+      dollar2 = Dollar.new(1)
+      expect(dollar1.equals(dollar2)).to be true
     end
 
     it "object match false" do
       dollar1 = Dollar.new(1)
       dollar2 = Dollar.new(2)
-      expect(dollar1.equal?(dollar2)).to be false
+      expect(dollar1.equals(dollar2)).to be false
     end
   end
 

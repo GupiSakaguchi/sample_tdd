@@ -8,4 +8,8 @@ class Dollar
   def amount_times(times)
     Dollar.new(@amount * times)
   end
+
+  def equals(object)
+    @amount == object.amount
+  end
 end
