@@ -27,3 +27,16 @@ RSpec.describe Dollar do
   end
 
 end
+
+RSpec.describe Franc do
+  describe "Multipulication" do
+    let(:dollar) { Franc.new(5) }
+    it "2 times" do
+      expect(Franc.new(10).amount).to eq dollar.amount_times(2).amount
+    end
+
+    it "3 times" do
+      expect(Franc.new(15).amount).to eq dollar.amount_times(3).amount
+    end
+  end
+end
